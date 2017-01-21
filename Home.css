@@ -11,14 +11,14 @@ h1 {
 } 
 
 .button {
-  font: bold 11px verdana;
+  font: bold 20px verdana;
   text-decoration: none;
   background-color: white;
   color: #00CCCC;
   padding: 100px 100px 100px 100px;
-  border-top: 300px ;
-  border-right:  300px ;
-  border-bottom: 300px ;
+  border-top: 250px ;
+  border-right:  250px ;
+  border-bottom: 250px ;
   border-left: 300px ;
   position: relative;
   top: 140px;

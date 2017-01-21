@@ -1,0 +1,23 @@
+body {
+  background-color: #00CCCC ; 
+}
+h1 {  
+  color: white; 
+  text-align: center; 
+  font-family:  verdana;
+  font-size: 4vw;  
+  position: relative;
+  top: 60px;
+} 
+.button {
+  font: bold 30px verdana;
+  text-decoration: none;
+  background-color: white;
+  color: #00CCCC;
+  padding: 40px 40px 40px 40px;
+  border-top: 20px ;
+  border-right:  20px ;
+  border-bottom: 20px ;
+  border-left: 20px ;
+  position: relative;
+  }

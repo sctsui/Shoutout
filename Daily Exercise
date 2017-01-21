@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		 <title>Shoutout Home Page</title>
+		 <link rel="stylesheet" href="Daily_Exercise.css">
+	</head>
+
+<body>
+<h1 class="text-center">Daily Exercise</h1>
+<h2 class="text-center">
+Generate Prompt here <!--Placeholder Message-->
+</h2>
+<div class = "container" id = "app">
+    <div class="panel panel-default">
+    <div class="panel-heading"></div> <!--Form-->
+    <div class="panel-body">
+    <span>Answer question here:</span>
+    <br>
+      <textarea v-model="message" placeholder="Enter here"></textarea>
+      <br>
+      <input type="button" value="OK" class="left">
+      <br>
+        <div class="panel-heading">Journal</div>
+       <p style="white-space: pre">{{ message }}</p>
+       <br>
+ </body>
+ </html>

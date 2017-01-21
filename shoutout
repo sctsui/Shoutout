@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		 <title>Masquerade Page</title>
+		 <link rel="stylesheet" href="Masquerade.css">
+	</head>
+
+	<body>
+		<h1 class="text-center">Shoutout</h1>
+<h2 class="text-center">
+Give a shoutout to someone who deserves recognition
+</h2>
+  <div class="container" id="app">
+    <div class="panel panel-default">
+      <div class="panel-heading">Form</div>
+      <div class="panel-body">
+      <span>Add a Message:</span>
+      <br>
+      <textarea v-model="message" placeholder="Enter here"></textarea>
+      <br>
+      <input type="button" value="Post" class="left">
+      <br>
+        <div class="panel-heading">Discussion </div>
+       <p style="white-space: pre">{{ message }}</p>
+       <br>
+       <button type="submit"><img src = "http://www.emoji.co.uk/files/apple-emojis/smileys-people-ios/89-clapping-hands-sign.png" width=25 height=25>Thanks for sharing!</button> 
+      </div>
+    </div>
+	</body>
+
+</html>

@@ -12,23 +12,63 @@
 <h2 class="text-center">
 Safe space to express your feelings
 </h2>
-	<div class = "container" id = "app">
-    <div class="panel panel-default">
-      <div class="panel-heading">Form</div>
-      <div class="panel-body">
-      <span><b>Add a Message:</b></span>
+<!--Displays user input text and echos to Discussion-->
+<div class="container" id="app">
+  <div class="panel panel-default">
+    <div class="panel-heading">Form</div>
+    <div class="panel-body">
+      <span>Add a Message:</span>
       <br>
       <textarea v-model="message" placeholder="Enter here"></textarea>
       <br>
       <input type="button" value="Post" class="left">
       <br>
-        <div class="panel-heading">Discussion </div>
-       <p style="white-space: pre">{{ message }}</p>
-       <br>
-       <button type="submit"><img src = "http://4.bp.blogspot.com/-wwCfaFFtf80/VdQptvFrLoI/AAAAAAAABuY/wIWqkcs1Zi8/s1600/Handshake.png" width=25 height=25>Connection!</button>
-       <button type="submit"><img src = "http://www.emoji.co.uk/files/apple-emojis/smileys-people-ios/89-clapping-hands-sign.png" width=25 height=25>Thanks for sharing!</button>
-      </div>
+      <div class="panel-heading">Discussion </div>
+      <p style="white-space: pre">{{ message }}</p>
+      <br>
+      <script>
+      
+      //Creates "Thanks for sharing button and click counter function
+        /*function clickCounter() {
+        if (typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {                                                       		  
+		localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        } else {                                                        
+		localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = '<img src = "http://www.emoji.co.uk/files/apple-emojis/smileys-people-ios/89-clapping-hands-sign.png" width=25 height=25>' + localStorage.clickcount + " time(s).";
+       } else {                                                          
+       		document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+       }
+}*/
+	//Creates "Connection" button and its click counter function
+        function clickCounter2() {
+          if (typeof(Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+              localStorage.clickcount = Number(localStorage.clickcount) + 1;
+            } else {
+              localStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML = '<img src = "http://4.bp.blogspot.com/-wwCfaFFtf80/VdQptvFrLoI/AAAAAAAABuY/wIWqkcs1Zi8/s1600/Handshake.png" width=25 height=25>' + localStorage.clickcount + " time(s).";
+          } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+          }
+        }
+
+      </script>
+      <!--Displays "Thanks for Sharing button-->
+      <!--   <p>
+        <button onclick="clickCounter()" type="button"><img src="http://www.emoji.co.uk/files/apple-emojis/smileys-people-ios/89-clapping-hands-sign.png" width=25 height=25>Thanks for sharing!</button>
+      </p>
+      <div id="result"></div> -->
+<!--Displays Connection Button -->
+      <p>
+        <button onclick="clickCounter2()" type="button"><img src="http://4.bp.blogspot.com/-wwCfaFFtf80/VdQptvFrLoI/AAAAAAAABuY/wIWqkcs1Zi8/s1600/Handshake.png" width=25 height=25>Connection</button>
+      </p>
+      <div id="result"></div>
     </div>
+  </div>
+
 	</body>
 
 </html>

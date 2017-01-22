@@ -11,8 +11,8 @@
 	</head>
 
 <body>
-<h1 class="text-center">Daily Exercise</h1>
-
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<h1 class="text-center">Daily Exercises</h1>
 <!--Display variable from script (prompt)-->
 <p id="display"></p>
 <script>
@@ -25,21 +25,36 @@
     return prompts[index];
   }
 </script>
+<!--Add data binding user input form, connects with posts-->
+<div class="container">
+  <div id="posts">
+   <h2>
+   <small> Answer</small>
+   </h2> 
+    <form v-on:submit="addPost">
+      <div class="form-group">
+        <input v-model="newPost" class="form-control" placeholder="Enter here">
 
-<!--Creats user input box and echoes to Journal-->
-<div class="container" id="app">
-  <div class="panel panel-default">
-    <div class="panel-heading"></div>
-    <div class="panel-body">
-      <span>Answer</span>
-      <br>
-      <textarea v-model="message" placeholder="Enter here"></textarea>
-      <br>
-      <input type="button" value="Ok" class="left">
-      <br>
-      <div class="panel-heading">Journal </div>
-      <p style="white-space: pre">{{ message }}</p>
-      <br>
+        </input>
+      </div>
+
+      <button class="btn btn-info">
+        Ok
+      </button>
+    </form>
+
+    <div>
+      <h1><small>Journal</small></h1>
+      <ol class="list-group">
+        <li v-for="(post, index) in posts" class="list-group-item">
+          {{ post.body }}
+          <br>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</div>
 
  </body>
  </html>

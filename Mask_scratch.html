@@ -1,0 +1,53 @@
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<h1 class="text-center">Masquerade</h1>
+<h2 class="text-center">
+A safe space to express your feelings
+</h2>
+
+<!--Add data binding user input form, connects with posts-->
+<div class="container">
+  <div id="posts">
+
+    <form v-on:submit="addPost">
+      <div class="form-group">
+        <input v-model="newPost" class="form-control" placeholder="Add a message">
+
+        </input>
+      </div>
+
+      <button class="btn btn-info">
+        Post
+      </button>
+    </form>
+
+    <div>
+      <h1>Discussion</h1>
+
+   <!--   <script>
+       <button v-on:click="counter += 1">Add 1</button>
+  <p>Snaps {{ counter }} times.</p>
+  <button v-on:click="counter1 += 1">Add 1</button>
+  <p>The button above has been clicked {{ counter1 }} times.</p>
+      </script>
+-->
+
+      <ol class="list-group">
+        <li v-for="(post, index) in posts" class="list-group-item">
+          {{ post.body }}
+          <img src="http://4.bp.blogspot.com/-wwCfaFFtf80/VdQptvFrLoI/AAAAAAAABuY/wIWqkcs1Zi8/s1600/Handshake.png" width=25 height=25>
+          <simple-counter></simple-counter>
+          <simple-counter></simple-counter>
+  <!--        <button v-on:click="counter += 1"><span>Add 1</span></button>
+          <p>Snaps {{ counter }} times.</p>
+          <button v-on:click="counter1 += 1"><span>Add 2</span></button>
+          <p>The button above has been clicked {{ counter1 }} times.</p>
+          -->
+          <div id="result"></div>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</div>

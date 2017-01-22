@@ -1,8 +1,8 @@
-<!--styling for the homepage-->
+/*styling for the homepage*/
 body {
   background-color: #00CCCC ; <!--Cyan Background -->
 }
-<!--Welcome message header -->
+/*--Welcome message header */
 h1 {  
   color: white; 
   text-align: center; 
@@ -12,8 +12,20 @@ h1 {
   top: 60px;
 } 
 
-<!--All 4 buttons-->
+/*--All 4 buttons*/
 .button {
+  font: bold 30px verdana;
+  text-decoration: none;
+  background-color: white;
+  color: #00CCCC; <!--Cyan-->
+  padding-top: 300px;
+  padding-right: 300px;
+  padding-bottom: 10px;
+  padding-left: 300px;
+  
+  position: relative;
+  top: 140px; 
+/*.button {
   font: bold 30px verdana;
   text-decoration: none;
   background-color: white;
@@ -25,5 +37,5 @@ h1 {
   border-left: 20px ;
   position: relative;
   top: 140px; 
-  left: 150px; 
+  left: 150px; */
 }

@@ -1,0 +1,7 @@
+Resources Used:
+http://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link
+http://stackoverflow.com/questions/710089/how-do-i-make-an-html-link-look-like-a-button
+https://www.sitepoint.com/a-basic-html5-template/
+https://github.com/icebob/vue-form-generator 
+http://jsfiddle.net/nQD3h/
+http://vegibit.com/vue-js-for-interactive-web-interfaces/

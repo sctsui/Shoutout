@@ -36,6 +36,7 @@ var vm = new Vue({
             fields: [{
                 type: "text",
                 label: "Add a Message",
+                delimiters:['${','}'],
                 model: "message",
                 readonly: false,
                 featured: true,
@@ -51,4 +52,3 @@ var vm = new Vue({
             validateAfterChanged: true
         }
     }
-});

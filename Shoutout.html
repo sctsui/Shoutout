@@ -10,34 +10,43 @@
 	</head>
 
 	<body>
-		<h1 class="text-center">Shoutout</h1>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<h1 class="text-center">Shoutout</h1>
 <h2 class="text-center">
-Give a shoutout to someone who deserves recognition
+Give Shoutout to someone who deserves recognition
 </h2>
-  <div class="container" id="app">
-    <div class="panel panel-default">
-      <div class="panel-heading">Form</div>
-      <div class="panel-body">
-      <span>Add a Message:</span>
-      <br>
-      <textarea v-model="message" placeholder="Enter here"></textarea>
-      <br>
-      <input type="button" value="Post" class="left">
-      <br>
-        <div class="panel-heading">Discussion </div>
-       <p style="white-space: pre">{{ message }}</p>
-       <br>
-       <button type="submit"><img src = "http://www.emoji.co.uk/files/apple-emojis/smileys-people-ios/89-clapping-hands-sign.png" width=25 height=25>Thanks for sharing!</button>
-	      <script>   
-		      function goBack(){
-			      <a href = "https://shoutout-156319.appspot.com" class = "button">Go Back</a>
-		      }
-	      </script>
-	      <p>
-		      <button onclick="goBack()" type="button">Go Back</button>
-              </p>
+
+<!--Add data binding user input form, connects with posts-->
+<div class="container">
+  <div id="posts">
+
+    <form v-on:submit="addPost">
+      <div class="form-group">
+        <input v-model="newPost" class="form-control" placeholder="Add a message">
+
+        </input>
       </div>
+
+      <button class="btn btn-info">
+        Post
+      </button>
+    </form>
+
+    <div>
+      <h1><small>Discussion</small></h1>
+      <ol class="list-group">
+        <li v-for="(post, index) in posts" class="list-group-item">
+          {{ post.body }}
+          <br>
+          <small><i><img src="http://emojipedia-us.s3.amazonaws.com/cache/66/8a/668a7a5c6d71647581834e48a06a2c49.png" width=22 height=22>You're Amazing! 
+          <simple-counter></simple-counter> </i></small>
+          <div id="result"></div>
+        </li>
+      </ol>
     </div>
+
+  </div>
+</div>
 	</body>
 
 </html>

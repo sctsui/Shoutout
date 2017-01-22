@@ -11,75 +11,52 @@
 	</head>
 
 	<body>
-		<h1 class="text-center">Masquerade</h1>
+		
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<h1 class="text-center">Masquerade</h1>
 <h2 class="text-center">
-Safe space to express your feelings
+A safe space to express your feelings
 </h2>
-<!--Displays user input text and echos to Discussion-->
-<div class="container" id="app">
-  <div class="panel panel-default">
-    <div class="panel-heading">Form</div>
-    <div class="panel-body">
-      <span>Add a Message:</span>
-      <br>
-      <textarea v-model="message" placeholder="Enter here"></textarea>
-      <br>
-      <input type="button" value="Post" class="left">
-      <br>
-      <div class="panel-heading">Discussion </div>
-      <p style="white-space: pre">{{ message }}</p>
-      <br>
-      <script>
-      
-      //Creates "Thanks for sharing button and click counter function
-        /*function clickCounter() {
-        if (typeof(Storage) !== "undefined") {
-        if (localStorage.clickcount) {                                                       		  
-		localStorage.clickcount = Number(localStorage.clickcount) + 1;
-        } else {                                                        
-		localStorage.clickcount = 1;
-        }
-        document.getElementById("result").innerHTML = '<img src = "http://www.emoji.co.uk/files/apple-emojis/smileys-people-ios/89-clapping-hands-sign.png" width=25 height=25>' + localStorage.clickcount + " time(s).";
-       } else {                                                          
-       		document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
-       }
-}*/
-	//Creates "Connection" button and its click counter function
-        function clickCounter2() {
-          if (typeof(Storage) !== "undefined") {
-            if (localStorage.clickcount) {
-              localStorage.clickcount = Number(localStorage.clickcount) + 1;
-            } else {
-              localStorage.clickcount = 1;
-            }
-            document.getElementById("result").innerHTML = '<img src = "http://4.bp.blogspot.com/-wwCfaFFtf80/VdQptvFrLoI/AAAAAAAABuY/wIWqkcs1Zi8/s1600/Handshake.png" width=25 height=25>' + localStorage.clickcount + " time(s).";
-          } else {
-            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
-          }
-        }
 
-	function goBack(){
-	   <a href = "https://shoutout-156319.appspot.com" class = "button">Go Back</a>
-        }
+<!--Add data binding user input form, connects with posts-->
+<div class="container">
+  <div id="posts">
 
-      </script>
-      <!--Displays "Thanks for Sharing button-->
-      <!--   <p>
-        <button onclick="clickCounter()" type="button"><img src="http://www.emoji.co.uk/files/apple-emojis/smileys-people-ios/89-clapping-hands-sign.png" width=25 height=25>Thanks for sharing!</button>
-      </p>
-      <div id="result"></div> -->
-<!--Displays Connection Button -->
-      <p>
-        <button onclick="clickCounter2()" type="button"><img src="http://4.bp.blogspot.com/-wwCfaFFtf80/VdQptvFrLoI/AAAAAAAABuY/wIWqkcs1Zi8/s1600/Handshake.png" width=25 height=25>Connection</button>
-        </p>
-     
-     <p>
-        <button onclick="goBack()" type="button">Go Back</button>
-        </p>
-      <div id="result"></div>
+    <form v-on:submit="addPost">
+      <div class="form-group">
+        <input v-model="newPost" class="form-control" placeholder="Add a message">
+
+        </input>
+      </div>
+
+      <button class="btn btn-info">
+        Post
+      </button>
+    </form>
+
+    <div>
+      <h1><small>Discussion</small></h1>
+      <ol class="list-group">
+        <li v-for="(post, index) in posts" class="list-group-item">
+          {{ post.body }}
+          <br>
+          <small><i>
+          
+          <img src="http://emojipedia-us.s3.amazonaws.com/cache/cf/a7/cfa7260d3e30a05eb2e9a65ad3b4c90f.png" width=25 height=25>Connection
+          <simple-counter></simple-counter> </i> </small>
+          <small><i><img src="http://emojipedia-us.s3.amazonaws.com/cache/bf/85/bf856252e53eef91e78e925f2e6c8d47.png" width=22 height=22>Thanks for Sharing 
+          <simple-counter></simple-counter> </i></small>
+          <div id="result"></div>
+        </li>
+      </ol>
     </div>
-  </div>
 
-	</body>
+  </div>
+</div>
+
+
+
+   </body>
 
 </html>

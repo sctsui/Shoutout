@@ -1,58 +1,50 @@
-var vm = new Vue({
-    el: "#app",
-    components: {
-        "vue-form-generator": VueFormGenerator.component
-    },
-    
-		makeForm();
-  	processForm();
-
-		/*generates the form (Enter here text box)*/
-		function makeForm ()
-		{
-  		filters: {
-    	prettyJSON: function(json) {
-    	if (json) {
-         json = JSON.stringify(json, undefined, 4);
-         json = json.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
-         return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?		|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match) {
-              var cls = 'number';
-              if (/^"/.test(match)) {
-                   if (/:$/.test(match)) {
-                        cls = 'key';
-                   }else {
-                       cls = 'string';
-                   }
-               } else if (/true|false/.test(match)) {
-                    cls = 'boolean';
-               } else if (/null/.test(match)) {
-                    cls = 'null';
-               }
-               return '<span class="' + cls + '">' + match + '</span>';
-				});
-	}}},
+var data = {
+  counter: 0
 }
-    
-    function processForm()
-    {
-    	/*User input inside form populated to data variable displayed in model*/
-    data: {
-        model:{
-        		message: "",
-        },
-        schema: {
-            fields: [{
-                type: "text",
-                label: "Add a Message",
-                model: "message",
-                readonly: false,
-                featured: true,
-                required: false,
-                disabled: false,
-                placeholder: "Enter here",
-               
-         		}]
-        },
+Vue.component('simple-counter', {
+  template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+  // data is technically a function, so Vue won't
+  // complain, but we return the same object
+  // reference for each component instance
+  data: function() {
+    return {
+      counter: 0
     }
-});
+  }
+})
 
+new Vue({
+  // the Vue Instance
+  el: '#posts',
+
+  // the data object,
+  // posts is where we collect posts from user
+  // newPost data binds to the form input
+  data: {
+    posts: [{
+      body: 'Scroll Down to see more posts, or post your own',
+      completed: false
+    }],
+
+    newPost: '',
+    counter: 0,
+  },
+
+  methods: {
+    // function declarations
+    addPost: function(e) {
+
+      // prevent the HTML form from submitting to the server
+      e.preventDefault();
+
+      this.posts.push({
+        body: this.newPost,
+        completed: false
+      });
+
+      // simply set the form input field to an empty string
+      // after we add a todo item
+      this.newPost = '';
+    }
+  }
+});

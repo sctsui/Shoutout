@@ -8,21 +8,36 @@
 
 <body>
 <h1 class="text-center">Daily Exercise</h1>
-<h2 class="text-center">
-Generate Prompt here <!--Placeholder Message-->
-</h2>
-<div class = "container" id = "app">
-    <div class="panel panel-default">
-    <div class="panel-heading"></div> <!--Form-->
+
+<!--Display variable from script (prompt)-->
+<p id="display"></p>
+<script>
+  var prompt = generatePrompt();
+  document.getElementById("display").innerHTML = prompt;
+  /*Returns a randomly generated prompt*/
+  function generatePrompt() {
+    var prompts = ["Name 3 things you are good at:", "What’s something positive that happened today?", "Is there something someone did that deserves recognition? Post about it in the ‘Shoutouts’ tab!", "What does imposter syndrome mean to you?", "Name something you did this past week that you are proud of."];
+
+    var index = Math.floor((Math.random() * prompts.length - 1) + 1); //random number from 0 to last array index
+
+    return prompts[index];
+  }
+</script>
+
+<!--Creats user input box and echoes to Journal-->
+<div class="container" id="app">
+  <div class="panel panel-default">
+    <div class="panel-heading"></div>
     <div class="panel-body">
-    <span>Answer question here:</span>
-    <br>
+      <span>Answer</span>
+      <br>
       <textarea v-model="message" placeholder="Enter here"></textarea>
       <br>
-      <input type="button" value="OK" class="left">
+      <input type="button" value="Ok" class="left">
       <br>
-        <div class="panel-heading">Journal</div>
-       <p style="white-space: pre"></p>
-       <br>
+      <div class="panel-heading">Journal </div>
+      <p style="white-space: pre">{{ message }}</p>
+      <br>
+
  </body>
  </html>

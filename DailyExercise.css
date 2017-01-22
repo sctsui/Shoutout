@@ -1,1 +1,21 @@
+body {
+   background-color: #00CCCC; 
+} 
 
+h1 {
+  color: white; 
+  font-family: verdana; 
+  size: 300px;  
+}
+
+h2 {
+  color: white; 
+  font-family: verdana; 
+  size: 80px; 
+} 
+
+input {
+  color: white; 
+  font-family: verdana; 
+  size: 80 px;  
+} 
